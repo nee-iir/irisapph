@@ -1,0 +1,195 @@
+/* ===== Reset & Base ===== */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #C3FB64;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* ===== Frog ===== */
+.frog {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  background-color: #6FD84B;
+  border-radius: 50%;
+
+  transform: scale(0);
+  opacity: 0;
+  animation: popIn 1.2s ease-out forwards, bounce 2s ease-in-out infinite;
+  animation-delay: 0s, 1.2s;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.frog:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Ears ===== */
+.ear {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background-color: #6FD84B;
+  border-radius: 50%;
+  top: -60px;
+  z-index: -1;
+}
+
+.ear.left {
+  left: -40px;
+}
+
+.ear.right {
+  right: -40px;
+}
+
+/* ===== Eyes ===== */
+.eye {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  top: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eye.left {
+  left: 30px;
+}
+
+.eye.right {
+  right: 30px;
+}
+
+.eyeball {
+  width: 45px;
+  height: 45px;
+  background-color: black;
+  border-radius: 50%;
+  position: relative;
+}
+
+.highlight {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  top: 8px;
+  left: 8px;
+}
+
+/* ===== Nose ===== */
+.nose {
+  position: absolute;
+  width: 15px;
+  height: 16px;
+  background-color: white;
+  border-radius: 60%;
+  top: 180px;
+}
+
+.nose.left {
+  left: 150px;
+}
+
+.nose.right {
+  right: 150px;
+}
+
+/* ===== Animations ===== */
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .frog {
+    width: 240px;
+    height: 240px;
+  }
+
+  .ear {
+    width: 100px;
+    height: 100px;
+    top: -40px;
+  }
+
+  .ear.left {
+    left: -25px;
+  }
+
+  .ear.right {
+    right: -25px;
+  }
+
+  .eye {
+    width: 70px;
+    height: 70px;
+    top: -15px;
+  }
+
+  .eye.left {
+    left: 20px;
+  }
+
+  .eye.right {
+    right: 20px;
+  }
+
+  .eyeball {
+    width: 30px;
+    height: 30px;
+  }
+
+  .highlight {
+    width: 6px;
+    height: 6px;
+    top: 5px;
+    left: 5px;
+  }
+
+  .nose {
+    width: 10px;
+    height: 10px;
+    top: 120px;
+  }
+
+  .nose.left {
+    left: 100px;
+  }
+
+  .nose.right {
+    right: 100px;
+  }
+}
